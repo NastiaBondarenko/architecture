@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <meta charset="utf-8" />
+    <script src="index.js"></script>
+</head>
+<body style = "display: flex; align-items: center; justify-content: center; flex-direction: column; ">
+    <div class="menu" style=" display: flex; align-items: center; justify-content: center; flex-direction: column; ">
+        <button style="margin: 10px;" onclick="makeNewProduct()">Додати товар</button>
+        <button style="margin: 10px;" onclick="seachProduct()">Пошук товарів </button>
+        <button style="margin: 10px;" onclick="updateProduct()">Змінити дані про продукт</button>
+        <button style="margin: 10px;" onclick="deleteCredit()">Видалити продукт</button>
+        <button style="margin: 10px;" onclick="searchInServer2()">Пошук товарів на севері 2</button>
+        <form action="/price-list/" method="get"> <button style="margin: 10px;">Переглянути товари на севері 3</button></form>
+        <button style="margin: 10px;" onclick="detailServ3()">Деталі про продукти на сервері 3</button>
+    </div>    
+    <div class = "makeProduct" style="display: none; ">    
+        <h1>Введіть дані про товар</h1>
+        <div>
+             <form action="/addProduct" method="post">
+                <label>Назва</label><br>
+                <input type="text" name="name" /><br><br>
+                <label>Ціна</label><br>
+                <input type="number" name="price" /><br><br>
+                <input type="submit" value="Отправить" />
+            </form>
+        </div>
+    </div>
+
+    <div class="viewProduct" style="display: none;">
+        <h1>Пошук товару</h1>
+        <form action="/viewProduct" method="post">
+                <label>Назва</label><br>
+                <input type="text" name="name" /><br><br>
+                <label>Ціна від</label><br>
+                <input type="number" name="priceFrom" /><br><br>
+                <label>Ціна до</label><br>
+                <input type="number" name="priceTo" /><br><br>
+                <input type="submit" value="Отправить" />
+            </form>
+    </div>
+     <div class="updateProduct" style="display: none;">
+        <h1>Оновлення даних про товар</h1>
+        <form action="/updateProduct" method="post">
+                <label>Назва</label><br>
+                <input type="text" name="name" /><br><br>
+                <label>Ціна </label><br>
+                <input type="number" name="price" /><br><br>
+                <label>Нова назва</label><br>
+                <input type="text" name="newName" /><br><br>
+                <label>Нова цна </label><br>
+                <input type="number" name="newPrice" /><br><br>
+                
+                <input type="submit" value="Отправить" />
+            </form>
+    </div>
+
+    <div class="deleteProduct" style="display: none;">
+        <h1>Видалити продукт</h1>
+        <form action="/deleteProduct" method="post">
+                <label>Назва</label><br>
+                <input type="text" name="name" /><br><br>
+                <label>Ціна </label><br>
+                 <input type="number" name="price" /><br><br>
+                <input type="submit" value="Отправить" />
+            </form>
+    </div>
+
+     <div class="searchSer2" style="display: none;">
+        <h1>Пошук товару</h1>
+        <form  action="/search" method="get">
+                <label>Назва</label><br>
+                <input type="text" name="name" /><br><br>
+                <label>Ціна від</label><br>
+                <input type="number" name="priceFrom" /><br><br>
+                <label>Ціна до</label><br>
+                <input type="number" name="priceTo" /><br><br>
+                <input type="submit" value="Отправить"/>
+            </form>
+    </div>
+
+    <div class="detailServ3" style="display: none;">
+        <h1>Пошук товару</h1>
+        <form  action="/details/" method="get">
+                <label>id товару</label><br>
+                <input type="number" name="id" /><br><br>
+                <input type="submit" value="Отправить"/>
+            </form>
+    </div>
+</body>
+</html>
